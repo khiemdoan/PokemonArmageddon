@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Pokemon Armageddon</string>
+    <string name="continue_read">Đọc tiếp</string>
+    <string name="chapter_list">Mục lục</string>
+    <string name="fanpage">Fanpage</string>
+    <string name="exit">Thoát</string>
+</resources>
