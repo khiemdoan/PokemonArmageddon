@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class DatabaseHelper {
 
-    public static final String DATABASE_NAME = "pokemon_armageddon.db";
+    private static final String DATABASE_NAME = "pokemon_armageddon.db";
 
     public DatabaseHelper(Context context) {
         this.context = context;
@@ -35,7 +35,7 @@ public class DatabaseHelper {
                 dbFile.createNewFile();
             }
 
-            InputStream is = context.getAssets().open(DatabaseHelper.DATABASE_NAME);
+            InputStream is = context.getAssets().open(DATABASE_NAME);
             OutputStream os = new FileOutputStream(dbFile);
 
             byte[] buffer = new byte[1024];
@@ -46,8 +46,7 @@ public class DatabaseHelper {
             os.flush();
             os.close();
             is.close();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
         }
     }
 
@@ -93,5 +92,22 @@ public class DatabaseHelper {
         cursor.close();
 
         return chapter;
+    }
+
+    public int getMaxId() {
+        File dbFile = context.getDatabasePath(DATABASE_NAME);
+        SQLiteDatabase database = SQLiteDatabase.openDatabase(dbFile.getPath(), null, SQLiteDatabase.CREATE_IF_NECESSARY);
+
+        String sql = "SELECT MAX(id) FROM chapters";
+        Cursor cursor = database.rawQuery(sql, null);
+
+        int max = 0;
+
+        if (cursor.moveToNext()) {
+            max = cursor.getInt(0);
+        }
+        cursor.close();
+
+        return max;
     }
 }

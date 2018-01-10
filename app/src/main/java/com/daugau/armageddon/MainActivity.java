@@ -17,14 +17,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void readContinue(View v) {
-        Intent intent = new Intent(MainActivity.this, ChapterActivity.class);
+        Intent intent = new Intent(this, ChapterActivity.class);
         intent.putExtra(ChapterActivity.CHAPTER_ID, 1);
         intent.putExtra(ChapterActivity.CONTINUE_READ, true);
         startActivity(intent);
     }
 
     public void viewChapterList(View v) {
-        Intent intent = new Intent(MainActivity.this, ListChapterActivity.class);
+        Intent intent = new Intent(this, ListChapterActivity.class);
         intent.putExtra(ChapterActivity.CHAPTER_ID, 1);
         intent.putExtra(ChapterActivity.CONTINUE_READ, false);
         startActivity(intent);
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         String FACEBOOK_URL = "https://www.facebook.com/" + FACEBOOK_PAGE_ID;
 
         PackageManager packageManager = getPackageManager();
-        String facebookUrl = "";
+        String facebookUrl;
         try {
             int versionCode = packageManager.getPackageInfo("com.facebook.katana", 0).versionCode;
             if (versionCode >= 3002850) { //newer versions of fb app
@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             } else { //older versions of fb app
                 facebookUrl = "fb://page/" + FACEBOOK_PAGE_ID;
             }
-        } catch (PackageManager.NameNotFoundException e) {
+        } catch (Exception ex) {
             facebookUrl = FACEBOOK_URL; //normal web url
         }
 

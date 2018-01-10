@@ -26,7 +26,7 @@ public class ListChapterActivity extends AppCompatActivity {
     ListView lvChapters;
 
     private void addControls() {
-        lvChapters = (ListView) findViewById(R.id.lstChapters);
+        lvChapters = findViewById(R.id.lstChapters);
 
         DatabaseHelper data = new DatabaseHelper(this);
         ArrayList<Chapter> chapters = data.getListTitle();

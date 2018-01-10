@@ -21,12 +21,10 @@ import java.util.List;
 
 public class ChapterAdapter extends ArrayAdapter<Chapter> {
 
-    Context context;
-    int resource;
+    private int resource;
 
     public ChapterAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull List<Chapter> objects) {
         super(context, resource, objects);
-        this.context = context;
         this.resource = resource;
     }
 
@@ -37,7 +35,7 @@ public class ChapterAdapter extends ArrayAdapter<Chapter> {
         View row = inflater.inflate(resource, null);
 
         Chapter chapter = getItem(position);
-        TextView txtTitleItem = (TextView) row.findViewById(R.id.txtTitleItem);
+        TextView txtTitleItem = row.findViewById(R.id.txtTitleItem);
 
         if (chapter != null && txtTitleItem != null) {
             String title = chapter.getTitle();
