@@ -30,9 +30,6 @@ public class ChapterActivity extends AppCompatActivity {
             id = preferences.getInt(CHAPTER_ID, 1);
         } else {
             id = getIntent().getExtras().getInt(CHAPTER_ID, 1);
-            SharedPreferences.Editor editor = preferences.edit();
-            editor.putInt(CHAPTER_ID, id);
-            editor.apply();
         }
 
         addControls();
@@ -57,11 +54,17 @@ public class ChapterActivity extends AppCompatActivity {
         DatabaseHelper data = new DatabaseHelper(this);
         Chapter chapter = data.getChapter(id);
 
+        setTitle(chapter.getTitle());
         String html = chapter.getContent();
         webView.loadData(
                 String.format(CORE_TEMPLATE, html),
                 "text/html; charset=utf-8",
                 "UTF-8");
+
+        SharedPreferences preferences = getSharedPreferences(CHAPTER_INFO, MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putInt(CHAPTER_ID, id);
+        editor.apply();
     }
 
     private class CustomGestureDetector extends GestureDetector.SimpleOnGestureListener {

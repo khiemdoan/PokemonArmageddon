@@ -26,6 +26,8 @@ public class ListChapterActivity extends AppCompatActivity {
     ListView lvChapters;
 
     private void addControls() {
+        setTitle("Mục lục");
+
         lvChapters = findViewById(R.id.lstChapters);
 
         DatabaseHelper data = new DatabaseHelper(this);
