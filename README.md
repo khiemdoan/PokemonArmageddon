@@ -18,3 +18,7 @@ Open the project with your Android Studio.
 ## Screenshot
 
 ![Screenshot](Screenshot/screenshot.jpg)
+
+## Install
+
+[Play Store: Day Nhau Hoc](https://play.google.com/store/apps/details?id=com.daugau.daynhauhoc)

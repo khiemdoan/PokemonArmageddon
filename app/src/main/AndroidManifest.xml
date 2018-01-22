@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.daugau.armageddon">
+    package="com.daugau.pokearmageddon">
 
     <application
         android:allowBackup="true"
@@ -9,15 +9,15 @@
         android:roundIcon="@drawable/feraligatr"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".PokemonArmageddonApplication">
-        <activity android:name=".MainActivity">
+        android:name="com.daugau.pokearmageddon.PokemonArmageddonApplication">
+        <activity android:name="com.daugau.pokearmageddon.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ListChapterActivity" />
-        <activity android:name=".ChapterActivity" />
+        <activity android:name="com.daugau.pokearmageddon.ListChapterActivity" />
+        <activity android:name="com.daugau.pokearmageddon.ChapterActivity" />
     </application>
 
 </manifest>

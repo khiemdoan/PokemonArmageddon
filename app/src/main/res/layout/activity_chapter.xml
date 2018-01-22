@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.daugau.armageddon.ChapterActivity">
+    tools:context="com.daugau.pokearmageddon.ChapterActivity">
 
-    <com.daugau.armageddon.CustomWebView
+    <com.daugau.pokearmageddon.CustomWebView
         android:id="@+id/wvContent"
         android:layout_width="0dp"
         android:layout_height="0dp"
