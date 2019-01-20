@@ -9,7 +9,7 @@
         android:roundIcon="@drawable/feraligatr"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name="com.daugau.pokearmageddon.PokemonArmageddonApplication">
+        android:name="com.daugau.pokearmageddon.Application">
         <activity android:name="com.daugau.pokearmageddon.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

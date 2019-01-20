@@ -1,15 +1,13 @@
 package com.daugau.pokearmageddon;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-
+import androidx.appcompat.app.AppCompatActivity;
 import com.daugau.pokearmageddon.adapter.ChapterAdapter;
 import com.daugau.pokearmageddon.model.Chapter;
-
 import java.util.ArrayList;
 
 public class ListChapterActivity extends AppCompatActivity {

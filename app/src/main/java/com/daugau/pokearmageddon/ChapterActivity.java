@@ -2,7 +2,6 @@ package com.daugau.pokearmageddon;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
@@ -10,6 +9,7 @@ import android.view.MotionEvent;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import androidx.appcompat.app.AppCompatActivity;
 import com.daugau.pokearmageddon.model.Chapter;
 
 public class ChapterActivity extends AppCompatActivity {
